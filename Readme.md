@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Rus Minin](https://up.htmlacademy.ru/javascript/28/user/2109823).
-* Наставник: `Неизвестно`.
+* Наставник: Roman Zheltov (https://htmlacademy.ru/profile/id1145037).
 
 ---
 
