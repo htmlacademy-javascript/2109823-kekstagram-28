@@ -18,11 +18,11 @@ function isPalindrom(str){
 
 
 function extractNumber(str){
-  const numbers = str.match(/\d+/g)
+  const numbers = str.match(/\d+/g);
   if(numbers === null){
     return NaN;
   }
- return Number(numbers.join(''));
+  return Number(numbers.join(''));
 }
 
 
@@ -35,7 +35,7 @@ function padStart(str,minLength,strAdd){
   if(addLength < strAdd.length){
     strAdd = strAdd.slice(0,addLength);
   }
-  console.log('cbhalk111', strAdd)
+  console.log('cbhalk111', strAdd);
 
 
   return strAdd.repeat(Math.ceil(addLength / strAdd.length)).slice(0,addLength) + str;
