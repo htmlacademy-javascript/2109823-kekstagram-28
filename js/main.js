@@ -36,5 +36,5 @@ const generateArray = (num) => {
   }
   return posts;
 };
-console.log(generateArray(25));
+generateArray(25);
 

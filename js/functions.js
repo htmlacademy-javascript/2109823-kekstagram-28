@@ -6,7 +6,7 @@ export function isValidateString(str,len){
 }
 
 export function isPalindrom(str){
- const result = str.toLowerCase().trim();
+  const result = str.toLowerCase().trim();
   for(let i = 0; i < result.length / 2; i++){
     if(result[i] !== result[result.length - 1 - i]){
       return false;
@@ -33,7 +33,7 @@ export function padStart(str,minLength,strAdd){
     strAdd = strAdd.slice(0,addLength);
   }
 
- return strAdd.repeat(Math.ceil(addLength / strAdd.length)).slice(0,addLength) + str;
+  return strAdd.repeat(Math.ceil(addLength / strAdd.length)).slice(0,addLength) + str;
 }
 
 export const getRandomNumber = (limit) => Math.floor(Math.random() * limit) + 1;
