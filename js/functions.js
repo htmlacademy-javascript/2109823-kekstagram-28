@@ -24,7 +24,6 @@ export function extractNumber(str){
 }
 
 export function padStart(str,minLength,strAdd){
-  // let strCut = '';
   if(str.length >= minLength){
     return str;
   }
@@ -42,7 +41,7 @@ export const getRandomLikes = (min, max) => Math.floor(Math.random() * (max - mi
 
 // функция для генерации случайного id (реализована в виде замыкания)
 export const generateId = (min, max) =>{
-  let usedIds = {};
+  const usedIds = {};
 
   return () => {
     let id;
@@ -58,12 +57,12 @@ export const generateId = (min, max) =>{
 export const generateUrl = () => {
   const uniqValue = generateId(1, 25);
   const idPhotoUrl = uniqValue();
-  return photos/${idPhotoUrl}.jpg;
+  return `photos/${idPhotoUrl}.jpg`;
 };
 
 // функция для случайного url для аватара
 export const getAvatar = () => {
   const uniqValue = generateId(15, 200);
-  return img/avatar-${uniqValue()}.svg;
+  return `img/avatar-${uniqValue()}.svg`;
 };
 

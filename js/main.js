@@ -1,4 +1,4 @@
-import {isValidateString,isPalindrom,extractNumber,padStart,getRandomNumber,getRandomLikes,generateId,generateUrl,getAvatar} from './functions.js';
+import {getRandomNumber,getRandomLikes,generateId,generateUrl,getAvatar} from './functions.js';
 import {messages,names,descriptions} from './data.js';
 
 
