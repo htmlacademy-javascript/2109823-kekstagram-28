@@ -5,6 +5,14 @@ export function isValidateString(str,len){
   return true;
 }
 
+export function extractNumber(str){
+  const numbers = str.match(/\d+/g);
+  if(numbers === null){
+    return NaN;
+  }
+  return Number(numbers.join(''));
+}
+
 export function isPalindrom(str){
   const result = str.toLowerCase().trim();
   for(let i = 0; i < result.length / 2; i++){
@@ -12,16 +20,8 @@ export function isPalindrom(str){
       return false;
     }
   }
+
   return true;
-}
-
-
-export function extractNumber(str){
-  const numbers = str.match(/\d+/g);
-  if(numbers === null){
-    return NaN;
-  }
-  return Number(numbers.join(''));
 }
 
 export function padStart(str,minLength,strAdd){
