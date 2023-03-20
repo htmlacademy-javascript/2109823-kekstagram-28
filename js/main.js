@@ -1,5 +1,6 @@
 import {getRandomNumber,getRandomLikes,generateId,generateUrl,getAvatar} from './functions.js';
 import {messages,names,descriptions} from './data.js';
+import {placePictures, photoArray } from './render-pictures.js';
 
 
 // создание случайных сообщений, внутри мы берем массив messages и обращаемся к элементу по случайному индексу с помощью функции generateId
@@ -28,7 +29,7 @@ const generateObject = () =>({
   comments: Array.from({length: 2}, createComment),
 });
 
-const generateArray = (num) => {
+export const generateArray = (num) => {
   const posts = [];
   for(let i = 0; i < num; i++){
     posts.push(generateObject());
@@ -36,5 +37,5 @@ const generateArray = (num) => {
   }
   return posts;
 };
-generateArray(25);
-
+//generateArray(25);
+placePictures(photoArray);
