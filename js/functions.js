@@ -1,19 +1,11 @@
-export function isValidateString(str,len){
+export const isValidateString = (str,len) => {
   if(str.length > len){
     return false;
   }
   return true;
-}
+};
 
-export function extractNumber(str){
-  const numbers = str.match(/\d+/g);
-  if(numbers === null){
-    return NaN;
-  }
-  return Number(numbers.join(''));
-}
-
-export function isPalindrom(str){
+export const isPalindrom = (str) => {
   const result = str.toLowerCase().trim();
   for(let i = 0; i < result.length / 2; i++){
     if(result[i] !== result[result.length - 1 - i]){
@@ -22,9 +14,18 @@ export function isPalindrom(str){
   }
 
   return true;
-}
+};
 
-export function padStart(str,minLength,strAdd){
+
+export const extractNumber = (str) => {
+  const numbers = str.match(/\d+/g);
+  if(numbers === null){
+    return NaN;
+  }
+  return Number(numbers.join(''));
+};
+
+export const padStart = (str,minLength,strAdd) => {
   if(str.length >= minLength){
     return str;
   }
@@ -34,7 +35,7 @@ export function padStart(str,minLength,strAdd){
   }
 
   return strAdd.repeat(Math.ceil(addLength / strAdd.length)).slice(0,addLength) + str;
-}
+};
 
 export const getRandomNumber = (limit) => Math.floor(Math.random() * limit) + 1;
 
