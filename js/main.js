@@ -1,13 +1,14 @@
 import {getRandomNumber,getRandomLikes,generateId,generateUrl,getAvatar} from './functions.js';
-import {messages,names,descriptions} from './data.js';
-import {placePictures, photoArray } from './render-pictures.js';
+import {names,descriptions,createSimilarDescriptionPhoto,COMMENTATORS_MESSAGES} from './data.js';
+import {placePictures} from './render-pictures.js';
+import {renderPhoto} from './thumbnail.js';
 
 
 // создание случайных сообщений, внутри мы берем массив messages и обращаемся к элементу по случайному индексу с помощью функции generateId
-const getRandomMessages = () => messages[generateId(1, messages.length - 1)];
+export const getRandomElement = (elements) => elements[generateId(1, elements.length - 1)];
 
 // создание массива, длинной getRandomLikes (то есть случайной длинной от 1 до 2)
-const createMessage = () => Array.from({length: getRandomLikes(1,2)}, getRandomMessages).join(' ');
+const createMessage = (items) => Array.from({length: getRandomLikes(1,2)}, () => getRandomElement(items)).join(' ');
 
 const uniqId = generateId(1, 25);
 
@@ -16,7 +17,7 @@ const createComment = () => {
   return {
     id: uniqValue(),
     avatar: getAvatar(),
-    message: createMessage(),
+    message: createMessage(COMMENTATORS_MESSAGES),
     name: names[getRandomLikes(1, names.length - 1)]
   };
 };
@@ -38,4 +39,9 @@ export const generateArray = (num) => {
   return posts;
 };
 //generateArray(25);
+const photoArray = generateArray(25);
+
 placePictures(photoArray);
+
+renderPhoto(createSimilarDescriptionPhoto());
+

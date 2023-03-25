@@ -8,8 +8,6 @@ if (allPictures) {
 const pictureTemplate = document.querySelector('#picture').content.cloneNode(true);
 const pictureFragment = document.createDocumentFragment();
 
-const photoArray = generateArray(25);
-
 const placePictures = (photos) => {
   photos.forEach(({ url, likes, description, comments }) => {
     const newPictureTemplate = pictureTemplate.cloneNode(true);
@@ -25,4 +23,4 @@ const placePictures = (photos) => {
   }
 };
 
-export { placePictures, photoArray };
+export { placePictures};
