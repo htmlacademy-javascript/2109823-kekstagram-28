@@ -68,4 +68,3 @@ export const getAvatar = () => {
   return `img/avatar-${uniqValue()}.svg`;
 };
 
-
