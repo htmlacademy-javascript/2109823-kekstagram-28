@@ -1,6 +1,5 @@
 import {getRandomNumber,getRandomLikes,generateId,generateUrl,getAvatar} from './functions.js';
-import {names,descriptions,createSimilarDescriptionPhoto,COMMENTATORS_MESSAGES} from './data.js';
-import {placePictures} from './render-pictures.js';
+import {names,descriptions,COMMENTATORS_MESSAGES} from './data.js';
 import {renderPhoto} from './thumbnail.js';
 
 
@@ -30,7 +29,7 @@ const generateObject = () =>({
   comments: Array.from({length: 2}, createComment),
 });
 
-export const generateArray = (num) => {
+const generateArray = (num) => {
   const posts = [];
   for(let i = 0; i < num; i++){
     posts.push(generateObject());
@@ -41,7 +40,7 @@ export const generateArray = (num) => {
 //generateArray(25);
 const photoArray = generateArray(25);
 
-placePictures(photoArray);
+renderPhoto(photoArray);
 
-renderPhoto(createSimilarDescriptionPhoto());
+//renderPhoto(createSimilarDescriptionPhoto());
 

@@ -15,9 +15,19 @@ const getPhotoData = (photo) => {
   bigPictureSocial.querySelector('.comments-count').textContent = comments.length;
   clearCommentList();
 };
-
+/*const handleOpenModal = (evt) => {
+  console.log('qwe');
+  evt.preventDefault();
+  photoModalElement.classList.remove('hidden');
+  getPhotoData(photo);
+  bigPictureSocial.querySelector('.social__comment-count').classList.add('hidden');
+  bigPictureSocial.querySelector('.comments-loader').classList.add('hidden');
+  document.body.classList.add('modal-open');
+  photo.comments.forEach((comment) => bigPictureSocial.querySelector('.social__comments').append(renderComment(comment)));
+  document.addEventListener('keydown', onDocumentKeydown);
+};*/
 const openModalBigPicture = (thumbnail, photo) => {
-  thumbnail.addEventListener('click', (evt) => {
+  thumbnail.addEventListener('click',(evt) => {
     evt.preventDefault();
     photoModalElement.classList.remove('hidden');
     getPhotoData(photo);
